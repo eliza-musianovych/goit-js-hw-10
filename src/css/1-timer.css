@@ -170,3 +170,9 @@ body .flatpickr-calendar {
     font-family: "Montserrat", sans-serif;
 }
 
+.custom-toast .iziToast-message.slideIn {
+    padding: 20px !important;
+    font-weight: 400;
+    font-size: 16px !important;
+    font-family: "Montserrat", sans-serif;
+}

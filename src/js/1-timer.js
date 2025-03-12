@@ -13,16 +13,6 @@ const timerDay = document.querySelector(`[data-days]`);
 const timerHour = document.querySelector(`[data-hours]`);
 const timerMinute = document.querySelector(`[data-minutes]`);
 const timerSecond = document.querySelector(`[data-seconds]`);
-const errorMessage = iziToast.show({
-  message: "Please choose a date in the future",
-  messageColor: `#fff`,
-  messageSize: '16px',
-  messageLineHeight: '1.5',
-  backgroundColor: '#ef4040',
-  closeOnClick: true,
-  position: `topRight`,
-  progressBarColor: `#B51B1B`,
-});
 
 const options = {
     enableTime: true,
@@ -43,7 +33,18 @@ const options = {
 
         if (!selectedDate || selectedDate < now) {
             saveButton.disabled = true;
-            errorMessage;  
+            iziToast.show({
+              message: "Please choose a date in the future",
+              messageColor: `#fff`,
+              messageSize: '16px',
+              messageLineHeight: '1.5',
+              backgroundColor: '#ef4040',
+              closeOnClick: true,
+              position: `topRight`,
+              progressBarColor: `#B51B1B`,
+              class: "custom-toast",
+              timeout: 500000,
+            });  
         } else {
             userSelectedDate = selectedDate;
             saveButton.disabled = false;
