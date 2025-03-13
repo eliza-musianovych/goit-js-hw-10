@@ -43,7 +43,7 @@ const options = {
               position: `topRight`,
               progressBarColor: `#B51B1B`,
               class: "custom-toast",
-              timeout: 500000,
+              timeout: 5000,
             });  
         } else {
             userSelectedDate = selectedDate;
