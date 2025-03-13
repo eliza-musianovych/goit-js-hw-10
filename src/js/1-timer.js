@@ -22,8 +22,8 @@ const options = {
     locale: {
       firstDayOfWeek: 1,
       weekdays: {
-        shorthand: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"], // Власні скорочення
-        longhand: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"] // Повні назви
+        shorthand: ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"], 
+        longhand: ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
     }
 },
     onClose(selectedDates) {
@@ -90,10 +90,10 @@ function convertMs(ms) {
 
       const { days, hours, minutes, seconds } = convertMs(timeRemaining);
 
-      timerDay.textContent = days < 10 ? `0${days}` : days;
-      timerHour.textContent = hours < 10 ? `0${hours}` : hours;
-      timerMinute.textContent = minutes < 10 ? `0${minutes}` : minutes;
-      timerSecond.textContent = seconds < 10 ? `0${seconds}` : seconds;
+      timerDay.textContent = days.toString().padStart(2, "0");
+      timerHour.textContent = hours.toString().padStart(2, "0");
+      timerMinute.textContent = minutes.toString().padStart(2, "0");
+      timerSecond.textContent = seconds.toString().padStart(2, "0");
     }, 1000); 
   };
 
@@ -103,7 +103,6 @@ saveButton.addEventListener("click", () => {
     }
 });
 
-  
 flatpickr(inputDate, options);
 
 
